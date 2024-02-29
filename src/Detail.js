@@ -12,11 +12,12 @@ export default function Detail() {
         {isPending && <div className='vh-100'>Loading ...</div>}
         {
         month &&<div className='continer mt-5'>
+                <h2 className='mb-3'>{month.MonthMm}</h2>
                 <div className="row justify-content-around mb-4">
                     <div className="col-md-6" data-aos="zoom-in">
-                        <img src={`/img/${month.id}.jpg`} alt="" className='img-thumbnail rounded'/>
-                    </div>
-                    <div className="col-md-6" data-aos="zoom-in">
+                        <div className="text-start">
+                        <img src={`/detail/0${month.id}.jpg`} alt="" className=''/>
+                        </div>
                         <table className='text-start'>
                             <tbody>
                                 <tr className='lh-lg' >
@@ -39,8 +40,10 @@ export default function Detail() {
                         </table>
                         <p className='text-start' style={{ textIndent : "50px" }}>{month.Description}</p>
                     </div>
+                    <div className="col-md-6" data-aos="zoom-in">
+                        <p className='text-start' style={{ textIndent : "50px" }} data-aos="zoom-in">{month.Detail}</p>
+                    </div>
                 </div>
-                <p className='text-start' style={{ textIndent : "50px" }} data-aos="zoom-in">{month.Detail}</p>
                 <button className='btn btn-secondary my-5' onClick={()=>navigate("/")} data-aos="zoom-in">Back To Home</button>
             </div>
         }

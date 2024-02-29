@@ -8,43 +8,43 @@ import Nav from './Nav';
 
 
 const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 4
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1
-    }
-  };
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 4,
+    slidesToSlide: 1 // optional, default to 1.
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 3,
+    slidesToSlide: 1 // optional, default to 1.
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+    slidesToSlide: 1 // optional, default to 1.
+  }
+};
 
 export default function Home() {
     const {datas : months, error, isPending} = useFetch("https://json-server-for-myanmar-months.vercel.app/Tbl_Months");
   return (<div className=''>
         <Nav/>
             <div className='container'>
-              <h1 className='my-5' data-aos="zoom-in">မြန်မာလ နှင့် ပွဲတော်များ</h1>
-              <div className='row my-5 py-4'>
+              <h3 className='my-5 text-start' data-aos="zoom-in">မြန်မာလ နှင့် ပွဲတော်များ</h3>
                   {error && <div>{error}</div>}
                   {isPending && <div className='vh-100'>Loading...</div>}
-                  {months && (<Carousel responsive={responsive}
-                                          autoPlay={true}
-                                          infinite={true}>
+                  {months && (<Carousel swipeable={false}
+                                        draggable={false}
+                                        responsive={responsive}
+                                        infinite={true}
+                                        autoPlaySpeed={1000}
+                                        keyBoardControl={true}
+                                        transitionDuration={500}>
                   {months.map(month => {
                       return <Link to={`/months/${month.id}`} key={month.id}><MonthCard  month={month} /></Link>
                       })}
                       </Carousel>)
                   }
-              </div>
           </div>
         </div>
   )
