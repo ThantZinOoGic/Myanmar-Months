@@ -4,6 +4,7 @@ import Carousel from 'react-multi-carousel';
 import MonthCard from './MonthCard';
 import "react-multi-carousel/lib/styles.css";
 import { Link } from 'react-router-dom';
+import Nav from './Nav';
 
 
 const responsive = {
@@ -14,7 +15,7 @@ const responsive = {
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 3
+      items: 4
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -28,20 +29,23 @@ const responsive = {
 
 export default function Home() {
     const {datas : months, error, isPending} = useFetch("https://json-server-for-myanmar-months.vercel.app/Tbl_Months");
-  return (<div className='container'>
-        <h1 className='my-5'>မြန်မာလအသေးစိတ်များ</h1>
-        <div className='row my-5 py-4'>
-            {error && <div>{error}</div>}
-            {isPending && <div className='vh-100'>Loading...</div>}
-            {months && (<Carousel responsive={responsive}
-                                    autoPlay={true}
-                                    infinite={true}>
-            {months.map(month => {
-                return <Link to={`/months/${month.id}`} key={month.id}><MonthCard  month={month} /></Link>
-                })}
-                </Carousel>)
-            }
+  return (<div className=''>
+        <Nav/>
+            <div className='container'>
+              <h1 className='my-5' data-aos="zoom-in">မြန်မာလ နှင့် ပွဲတော်များ</h1>
+              <div className='row my-5 py-4'>
+                  {error && <div>{error}</div>}
+                  {isPending && <div className='vh-100'>Loading...</div>}
+                  {months && (<Carousel responsive={responsive}
+                                          autoPlay={true}
+                                          infinite={true}>
+                  {months.map(month => {
+                      return <Link to={`/months/${month.id}`} key={month.id}><MonthCard  month={month} /></Link>
+                      })}
+                      </Carousel>)
+                  }
+              </div>
+          </div>
         </div>
-  </div>
   )
 }

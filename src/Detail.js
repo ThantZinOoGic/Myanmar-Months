@@ -13,10 +13,10 @@ export default function Detail() {
         {
         month &&<div className='continer mt-5'>
                 <div className="row justify-content-around mb-4">
-                    <div className="col-md-6">
+                    <div className="col-md-6" data-aos="zoom-in">
                         <img src={`/img/${month.id}.jpg`} alt="" className='img-thumbnail rounded'/>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6" data-aos="zoom-in">
                         <table className='text-start'>
                             <tbody>
                                 <tr className='lh-lg' >
@@ -40,8 +40,8 @@ export default function Detail() {
                         <p className='text-start' style={{ textIndent : "50px" }}>{month.Description}</p>
                     </div>
                 </div>
-                <p className='text-start' style={{ textIndent : "50px" }}>{month.Detail}</p>
-                <button className='btn btn-secondary my-5' onClick={()=>navigate("/")}>Back To Home</button>
+                <p className='text-start' style={{ textIndent : "50px" }} data-aos="zoom-in">{month.Detail}</p>
+                <button className='btn btn-secondary my-5' onClick={()=>navigate("/")} data-aos="zoom-in">Back To Home</button>
             </div>
         }
     </div>

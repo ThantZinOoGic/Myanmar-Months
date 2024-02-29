@@ -1,8 +1,10 @@
 import React from 'react'
 
 export default function Footer() {
+  console.log("footer ")
   return (
-    <div className='bg-light p-4 text-center mt-3'>
+    // <div>Footer</div>
+    <div className='p-4 text-center mt-3 bg-secondary'>
         <div className="row justify-content-center mb-3">
             <div className='col-1'>
                 <a href="#">

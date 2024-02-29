@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function MonthCard({month}) {
   return (
-      <div className='hlink mx-2'>
+      <div className='hlink mx-2' data-aos="zoom-in">
         <div className='card'>
           <div style={{ height : "200px", overflow : "hidden" }}>
             <img src={`./img/${month.id}.jpg`} alt="" className="img-thumbnail card-img" style={{ height : "200px" }}/>

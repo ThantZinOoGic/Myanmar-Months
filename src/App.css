@@ -20,6 +20,12 @@
   height: 60px;
 }
 
+.header {
+  background-image: url('../public/img/nav.jpg');
+  height: 500px;
+  width: 100%;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
