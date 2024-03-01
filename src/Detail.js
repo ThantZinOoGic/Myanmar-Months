@@ -16,7 +16,7 @@ export default function Detail() {
                 <div className="row justify-content-around mb-4">
                     <div className="col-md-6" data-aos="zoom-in">
                         <div className="text-start">
-                        <img src={`/detail/0${month.id}.jpg`} alt="" className=''/>
+                        <img src={`/detail/0${month.id}.jpg`} alt="" className='w-100' />
                         </div>
                         <table className='text-start'>
                             <tbody>

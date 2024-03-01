@@ -18,6 +18,7 @@
 .para {
   overflow: hidden;
   height: 60px;
+  text-decoration: none;
 }
 
 .header {

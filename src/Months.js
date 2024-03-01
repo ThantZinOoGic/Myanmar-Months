@@ -17,7 +17,7 @@ export default function Months() {
                 {months && months.map(month => {
                       return (
                             <div className="col-md-4 mb-3" key={month.id}>
-                                <Link to={`/months/${month.id}`} key={month.id}><MonthCard  month={month} /></Link>
+                                <Link to={`/months/${month.id}`} key={month.id} className='text-decoration-none'><MonthCard  month={month} /></Link>
                             </div>
                       ) 
                 })}

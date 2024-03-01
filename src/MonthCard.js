@@ -7,7 +7,7 @@ export default function MonthCard({month}) {
           <div style={{ height : "200px", overflow : "hidden" }}>
             <img src={`./img/${month.id}.jpg`} alt="" className="img-thumbnail card-img" style={{ height : "200px" }}/>
           </div>
-          <div className="para py-3"><p>{month.MonthMm}</p></div>
+          <div className="para py-3 "><p className=''>{month.MonthMm}</p></div>
         </div>
       </div>
   )
