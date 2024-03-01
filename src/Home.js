@@ -41,7 +41,7 @@ export default function Home() {
                                         keyBoardControl={true}
                                         transitionDuration={500}>
                   {months.map(month => {
-                      return <Link to={`/months/${month.id}`} key={month.id}><MonthCard  month={month} /></Link>
+                      return <Link to={`/months/${month.id}`} key={month.id} className='text-decoration-none'><MonthCard  month={month} /></Link>
                       })}
                       </Carousel>)
                   }
