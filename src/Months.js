@@ -16,7 +16,7 @@ export default function Months() {
                 {isPending && <div className='vh-100'>Loading ...</div>}
                 {months && months.map(month => {
                       return (
-                            <div className="col-md-4 mb-3" key={month.id}>
+                            <div className="col-md-3 mb-3" key={month.id}>
                                 <Link to={`/months/${month.id}`} key={month.id} className='text-decoration-none'><MonthCard  month={month} /></Link>
                             </div>
                       ) 
